@@ -1,13 +1,13 @@
 /**
  * 
- * @param {[]} arr receives a nested array
+ * @param {[]} nestedArray receives a nested array
  * @returns flatten array
- * @example [1, [1, 2, [3], 4, [5, [6]]]] => [1, 2, 3, 4, 5, 6]
+ * @example [1, [2, 3, [4], 5, [6, [7]]]] => [1, 2, 3, 4, 5, 6]
  */
-export function flattenArray(arr) {
+export function flattenArray(nestedArray) {
     const flatArray = [];
     
-    ([] || arr).forEach(element => {
+    ([] || nestedArray).forEach(element => {
         if (Array.isArray(element)) {
             flatArray.push(...flattenArray(element));
         } else {
